@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Learning Tutor - SDG 4</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<div class="app-wrapper">
+
+    <main class="tutor-container">
+
+        <!-- HEADER -->
+        <header class="tutor-header">
+
+            <div class="brand">
+
+                <div class="brand-icon">
+                    🤖
+                </div>
+
+                <div>
+                    <h1>AI Learning Tutor</h1>
+
+                    <p>
+                        <span class="online-dot"></span>
+                        SDG 4 • Quality Education
+                    </p>
+                </div>
+
+            </div>
+
+            <button id="clear-chat-btn"
+                    class="clear-btn">
+                🗑️ Clear
+            </button>
+
+        </header>
+
+
+        <!-- LEARNING CONTROLS -->
+        <section class="learning-controls">
+
+            <div class="control-group">
+
+                <label for="learner-level">
+                    🎯 Learner Level
+                </label>
+
+                <select id="learner-level">
+
+                    <option value="Beginner">
+                        🌱 Beginner
+                    </option>
+
+                    <option value="Intermediate">
+                        📘 Intermediate
+                    </option>
+
+                    <option value="Advanced">
+                        🚀 Advanced
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="control-group">
+
+                <label for="learning-mode">
+                    📚 Learning Mode
+                </label>
+
+                <select id="learning-mode">
+
+                    <option value="learn">
+                        📖 Learn Concept
+                    </option>
+
+                    <option value="quiz">
+                        📝 Generate Quiz
+                    </option>
+
+                    <option value="feedback">
+                        ✅ Check Answer
+                    </option>
+
+                    <option value="study_plan">
+                        📅 Study Plan
+                    </option>
+
+                </select>
+
+            </div>
+
+        </section>
+
+
+        <!-- QUICK ACTIONS -->
+        <section class="quick-actions">
+
+            <button class="action-btn"
+                    data-mode="learn"
+                    data-query="Explain this topic in a simple way: Python variables">
+                📖 Explain
+            </button>
+
+            <button class="action-btn"
+                    data-mode="quiz"
+                    data-query="Create a 5 question quiz about Python basics">
+                📝 Quiz
+            </button>
+
+            <button class="action-btn"
+                    data-mode="study_plan"
+                    data-query="Create a 7 day study plan for learning Python">
+                📅 Study Plan
+            </button>
+
+            <button class="action-btn"
+                    data-mode="learn"
+                    data-query="Give me an easy example of machine learning">
+                💡 Example
+            </button>
+
+        </section>
+
+
+        <!-- CHAT AREA -->
+        <section id="chat-box"
+                 class="chat-box"
+                 aria-live="polite">
+
+            <div class="message-group bot">
+
+                <div class="avatar">
+                    🤖
+                </div>
+
+                <div class="message-content">
+
+                    <div class="message-bubble">
+
+                        <h3>
+                            👋 Welcome to AI Learning Tutor!
+                        </h3>
+
+                        <p>
+                            I am your personalized AI tutor
+                            supporting <strong>SDG 4 – Quality Education.</strong>
+                        </p>
+
+                        <p>
+                            I can explain concepts, create quizzes,
+                            check your answers, give feedback and
+                            create study plans.
+                        </p>
+
+                        <p>
+                            🎯 Select your learning level and
+                            ask me anything!
+                        </p>
+
+                    </div>
+
+                    <span class="message-time">
+                        Just now
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- TYPING -->
+        <div id="typing-indicator"
+             class="typing hidden">
+
+            <div class="avatar">
+                🤖
+            </div>
+
+            <div class="typing-bubble">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </div>
+
+            <small>
+                AI Tutor is thinking...
+            </small>
+
+        </div>
+
+
+        <!-- INPUT -->
+        <footer class="input-area">
+
+            <form id="chat-form">
+
+                <input
+                    type="text"
+                    id="user-input"
+                    placeholder="Ask your tutor anything..."
+                    autocomplete="off"
+                    required
+                >
+
+                <button
+                    type="submit"
+                    id="send-btn">
+                    Send 🚀
+                </button>
+
+            </form>
+
+            <p class="footer-text">
+                SDG 4 • Quality Education • Powered by Google Gemini AI
+            </p>
+
+        </footer>
+
+    </main>
+
+</div>
+
+
+<script src="{{ url_for('static', filename='js/script.js') }}">
+</script>
+
+</body>
+</html>
